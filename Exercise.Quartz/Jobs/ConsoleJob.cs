@@ -9,7 +9,13 @@ namespace Exercise.Quartz.Jobs
 {
     class ConsoleJob : IJob
     {
-        public string Name { get; set; }
+        public string Name { get; }
+
+        public ConsoleJob(string name)
+        {
+            Name = name;
+        }
+
         public Task Execute(IJobExecutionContext context)
         {
             Console.WriteLine($"Name: {Name} - Hi, Im console Job");
